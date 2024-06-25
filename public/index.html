@@ -15,13 +15,8 @@
           <ul class="mt-4">
             <li class="mb-2">
               <a
-
                 href="index.html"
                 class="flex items-center justify-between text-white hover:text-gray-400 toggle-submenu"
-
-                href="#"
-                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
-
                 >Dashboard</a
               >
             </li>
@@ -31,28 +26,6 @@
                 class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
                 >Mobil</a
               >
-
-                href="#"
-                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
-                >Mobil<span>&#9662;</span></a
-              >
-              <ul class="pl-4 submenu">
-                <li class="mb-2">
-                  <a href="#" class="text-gray-400 hover:text-white"
-                    >Daftar Mobil</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-gray-400 hover:text-white"
-                    >Tambah Mobil</a
-                  >
-                </li>
-                <li class="mb-2">
-                  <a href="#" class="text-gray-400 hover:text-white"
-                    >Kategori Mobil</a
-                  >
-                </li>
-              </ul>
 
             </li>
             <li class="mb-2">
@@ -113,7 +86,6 @@
                 </li>
               </ul>
             </li>
-
           </ul>
         </div>
       </div>
@@ -231,22 +203,24 @@
       </div>
     </footer>
 
-    item.addEventListener("click", (event) => {
-      const submenu = item.nextElementSibling;
-      if (submenu && submenu.classList.contains("submenu")) {
-        event.preventDefault(); // Hanya mencegah default action jika link memiliki submenu
-        // Remove active class from all items
-        document.querySelectorAll(".toggle-submenu").forEach((link) => {
-          link.classList.remove("active");
+    <script>
+      document.querySelectorAll(".toggle-submenu").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const submenu = item.nextElementSibling;
+          if (submenu && submenu.classList.contains("submenu")) {
+            event.preventDefault(); // Hanya mencegah default action jika link memiliki submenu
+            // Remove active class from all items
+            document.querySelectorAll(".toggle-submenu").forEach((link) => {
+              link.classList.remove("active");
+            });
+            // Add active class to the clicked item
+            item.classList.add("active");
+            // Toggle the submenu
+            submenu.style.display =
+              submenu.style.display === "none" ? "block" : "none";
+          }
         });
-        // Add active class to the clicked item
-        item.classList.add("active");
-        // Toggle the submenu
-        submenu.style.display =
-          submenu.style.display === "none" ? "block" : "none";
-      }
-    });
-
-</script>
+      });
+    </script>
   </body>
 </html>
