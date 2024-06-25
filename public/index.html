@@ -15,8 +15,13 @@
           <ul class="mt-4">
             <li class="mb-2">
               <a
+
                 href="index.html"
                 class="flex items-center justify-between text-white hover:text-gray-400 toggle-submenu"
+
+                href="#"
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+
                 >Dashboard</a
               >
             </li>
@@ -26,6 +31,29 @@
                 class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
                 >Mobil</a
               >
+
+                href="#"
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+                >Mobil<span>&#9662;</span></a
+              >
+              <ul class="pl-4 submenu">
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Daftar Mobil</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Tambah Mobil</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Kategori Mobil</a
+                  >
+                </li>
+              </ul>
+
             </li>
             <li class="mb-2">
               <a
@@ -65,6 +93,27 @@
                 </li>
               </ul>
             </li>
+
+            <li class="mb-2">
+              <a
+                href="#"
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+                >Laporan<span>&#9662;</span></a
+              >
+              <ul class="pl-4 submenu">
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Laporan Pendapatan</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Laporan Pengeluaran</a
+                  >
+                </li>
+              </ul>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -195,6 +244,104 @@
             // Add active class to the clicked item
             item.classList.add("active");
             // Toggle the submenu
+
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-2 text-xl font-semibold">Link Cepat</h3>
+            <ul>
+              <li class="mb-2">
+                <a href="#" class="text-green-400 hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-green-400 hover:text-white"
+                  >Daftar Mobil</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-green-400 hover:text-white"
+                  >Daftar Pelanggan</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- New Content Section -->
+        <div class="grid grid-cols-3 gap-4 mt-6">
+          <div class="p-4 bg-gray-800 rounded">
+            <h3 class="mb-2 text-xl font-semibold">Jenis Akun Rental Mobil</h3>
+            <p class="mb-2">
+              Akun di sistem kami memungkinkan Anda untuk mengorganisir dan
+              mengontrol akses ke armada mobil.
+            </p>
+            <p class="text-gray-400">@RentalMobil</p>
+          </div>
+          <div class="p-4 bg-gray-800 rounded">
+            <h3 class="mb-2 text-xl font-semibold">
+              Cara Berkontribusi ke Sistem Kami
+            </h3>
+            <p class="mb-2">
+              Anda dapat menemukan cara untuk berkontribusi pada proyek-proyek
+              dalam sistem kami yang relevan bagi Anda.
+            </p>
+            <p class="text-gray-400">@RentalMobil</p>
+          </div>
+          <div class="p-4 bg-gray-800 rounded">
+            <h3 class="mb-2 text-xl font-semibold">
+              Memecahkan Masalah Konektivitas
+            </h3>
+            <p class="mb-2">
+              Jika Anda mengalami kesulitan menghubungkan ke sistem, Anda dapat
+              memecahkan masalah koneksi, lalu gunakan alat Debug untuk
+              mendiagnosa masalah.
+            </p>
+            <p class="text-gray-400">@RentalMobil</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-4 bg-gray-800">
+      <div class="flex justify-between">
+        <p>&copy; 2024 Sistem Rental Mobil. All rights reserved.</p>
+        <ul class="flex space-x-4">
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Kebijakan Privasi</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Syarat dan Ketentuan</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white">Hubungi Kami</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".toggle-submenu").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          // Remove active class from all items
+          document.querySelectorAll(".toggle-submenu").forEach((link) => {
+            link.classList.remove("active");
+          });
+
+          // Add active class to the clicked item
+          item.classList.add("active");
+
+          // Toggle the submenu
+          const submenu = item.nextElementSibling;
+          if (submenu.classList.contains("submenu")) {
             submenu.style.display =
               submenu.style.display === "none" ? "block" : "none";
           }
