@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementasi Sistem Rental Mobil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="text-white bg-gray-900">
+    <!-- Sidebar -->
+    <div class="flex">
+      <div class="w-64 p-4 bg-gray-800">
+        <div class="mb-4">
+          <h2 class="text-lg font-bold">Rental Mobil</h2>
+          <ul class="mt-4">
+            <li class="mb-2">
+              <a
+                href="index.html"
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+                >Dashboard</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href=""
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+                >User Login</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="mobil.html"
+                class="flex items-center justify-between text-white hover:text-gray-400 toggle-submenu"
+                >Mobil</a
+              >
+            </li>
+
+            <li class="mb-2">
+              <a
+                href="#"
+                class="flex items-center justify-between text-gray-400 hover:text-white toggle-submenu"
+                >Transaksi<span>&#9662;</span></a
+              >
+              <ul class="pl-4 submenu">
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Daftar Transaksi</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Tambah Transaksi</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6">
+        <h1 class="mb-4 text-2xl font-bold">Login User</h1>
+        <img src="asset/Screenshot at 2024-06-25 16-51-37.png" alt="" />
+
+        <h3 class="mt-5 text-xl font-bold">Tampilan Umum</h3>
+        <p class="mb-6">
+          Pada halaman "Daftar Mobil", Anda dapat melihat semua mobil yang
+          tersedia di sistem rental mobil kami. Halaman ini dirancang untuk
+          memberikan informasi lengkap mengenai mobil-mobil yang tersedia,
+          sehingga memudahkan Anda dalam memilih mobil yang sesuai dengan
+          kebutuhan.
+        </p>
+
+        <h3 class="mt-5 text-xl font-bold">Fitur Pencarian</h3>
+        <p class="mb-6">
+          Untuk memudahkan eksplorasi, kami menyediakan fitur pencarian yang
+          dapat digunakan untuk menemukan mobil berdasarkan berbagai kriteria.
+          Fitur ini sangat berguna ketika Anda ingin mencari mobil dengan
+          spesifikasi atau kriteria tertentu.
+        </p>
+
+        <h2 class="mt-5 text-xl font-bold">
+          Langkah-langkah Menggunakan Fitur Pencarian
+        </h2>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-4 bg-gray-800">
+      <div class="flex justify-between">
+        <p>&copy; 2024 Sistem Rental Mobil. All rights reserved.</p>
+        <ul class="flex space-x-4">
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Kebijakan Privasi</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Syarat dan Ketentuan</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white">Hubungi Kami</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".toggle-submenu").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const submenu = item.nextElementSibling;
+          if (submenu && submenu.classList.contains("submenu")) {
+            event.preventDefault(); // Hanya mencegah default action jika link memiliki submenu
+            // Remove active class from all items
+            document.querySelectorAll(".toggle-submenu").forEach((link) => {
+              link.classList.remove("active");
+            });
+            // Add active class to the clicked item
+            item.classList.add("active");
+            // Toggle the submenu
+            submenu.style.display =
+              submenu.style.display === "none" ? "block" : "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
